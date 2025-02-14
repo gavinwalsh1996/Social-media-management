@@ -62,6 +62,53 @@ body {
   }
 }
 
+.fc-button {
+  background-color: #3498db !important;
+  color: white !important;
+  border-radius: 6px !important;
+  padding: 6px 12px !important;
+  border: none !important;
+}
+
+.fc-button:hover {
+  background-color: #2980b9 !important;
+}
+
+.fc-prev-button,
+.fc-next-button {
+  background-color: #f3f4f6 !important;
+}
+.fc-prev-button {
+  margin-right: 12px !important;
+}
+
+.fc-prev-button span,
+.fc-next-button span {
+  color: #1a202c !important;
+}
+
+.fc-prev-button:hover,
+.fc-next-button:hover {
+  background-color: #e5e7eb !important;
+}
+
+.fc-today-button {
+  background-color: #27ae60 !important;
+}
+
+.fc-today-button:hover {
+  background-color: #219150 !important;
+}
+
+.fc-timeGridWeek-button {
+  margin-left: 12px !important;
+}
+
+.fc-day:hover {
+  background-color: #3498db29 !important;
+  cursor: pointer;
+}
+
 @layer base {
   * {
     @apply border-border;
