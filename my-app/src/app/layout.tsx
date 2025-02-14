@@ -5,10 +5,19 @@ import { Sidebar } from "@/components/sidebar";
 import { House, CalendarDays, CirclePlus, User } from "lucide-react";
 
 const menuItems = [
-  { label: "Home", icon: House, tooltipText: "Home" },
-  { label: "Plan", icon: CalendarDays, tooltipText: "Plan" },
-  { label: "Create", icon: CirclePlus, tooltipText: "Create" },
-  { label: "Profile", icon: User, tooltipText: "Profile" },
+  { label: "Home", icon: House, tooltipText: "Home", dashboardId: "/home" },
+  {
+    label: "Plan",
+    icon: CalendarDays,
+    tooltipText: "Plan",
+    dashboardId: "/plan",
+  },
+  {
+    label: "Create",
+    icon: CirclePlus,
+    tooltipText: "Create",
+    dashboardId: "/create",
+  },
 ];
 
 const geistSans = Geist({
