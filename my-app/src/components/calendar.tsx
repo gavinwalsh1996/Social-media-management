@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import FullCalendar from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid"; // Day grid view
-import interactionPlugin from "@fullcalendar/interaction"; // Drag-and-drop plugin
+import dayGridPlugin from "@fullcalendar/daygrid"; // Month View
+import timeGridPlugin from "@fullcalendar/timegrid"; // Week & Day Views
+import interactionPlugin from "@fullcalendar/interaction"; // Drag-and-drop support
 
 const Calendar = () => {
   const [events, setEvents] = useState([
@@ -22,13 +23,18 @@ const Calendar = () => {
   return (
     <div className="calendar-container">
       <FullCalendar
-        plugins={[dayGridPlugin, interactionPlugin]} // Add plugins
+        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
-        events={events} // Dynamic events array
-        dateClick={handleDateClick} // Handle date click
-        eventClick={handleEventClick} // Handle event click
-        editable={true} // Enable drag-and-drop
-        droppable={true} // Allow dragging events
+        headerToolbar={{
+          left: "prev,next today",
+          center: "title",
+          right: "dayGridMonth,timeGridWeek",
+        }}
+        events={events}
+        dateClick={handleDateClick}
+        eventClick={handleEventClick}
+        editable={true}
+        droppable={true}
       />
     </div>
   );
