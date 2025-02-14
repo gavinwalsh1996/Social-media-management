@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Sidebar } from "@/components/sidebar";
-import { House, CalendarDays, CirclePlus } from "lucide-react";
+import { House, CalendarDays, CirclePlus, User } from "lucide-react";
 
 const menuItems = [
-  { label: "Home", icon: House },
-  { label: "Plan", icon: CalendarDays },
-  { label: "Create", icon: CirclePlus },
+  { label: "Home", icon: House, tooltipText: "Home" },
+  { label: "Plan", icon: CalendarDays, tooltipText: "Plan" },
+  { label: "Create", icon: CirclePlus, tooltipText: "Create" },
+  { label: "Profile", icon: User, tooltipText: "Profile" },
 ];
 
 const geistSans = Geist({
