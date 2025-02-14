@@ -8,7 +8,7 @@ interface HeaderProps {
 
 export const Header = ({ heading }: HeaderProps) => {
   return (
-    <header className="flex items-center justify-between ">
+    <header className="flex items-center justify-between">
       <h1 className="text-3xl">{heading}</h1>
       <Button text="Create a post" icon={CirclePlus} />
     </header>
