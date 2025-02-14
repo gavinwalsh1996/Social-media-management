@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Sidebar } from "@/components/sidebar";
+import { House, CalendarDays, CirclePlus } from "lucide-react";
+
+const menuItems = [
+  { label: "Home", icon: House },
+  { label: "Plan", icon: CalendarDays },
+  { label: "Create", icon: CirclePlus },
+];
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +36,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="flex min-h-screen">
-          <Sidebar menuItems={["Home", "Plan", "Create"]} />
+          <Sidebar menuItems={menuItems} />
           <main className="flex-1">{children}</main>
         </div>
       </body>
