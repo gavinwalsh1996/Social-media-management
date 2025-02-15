@@ -26,10 +26,9 @@ export const Sidebar = ({ menuItems }: SideBarProps) => {
     <div className="p-4 flex flex-col items-center h-screen">
       <ul className="flex flex-col gap-4 flex-grow">
         {menuItems.map(
-          ({ label, icon: Icon, tooltipText, dashboardId }, key) => (
-            <Link href={`/dashboard/${dashboardId}`}>
+          ({ label, icon: Icon, tooltipText, dashboardId }, index) => (
+            <Link href={`/dashboard/${dashboardId}`} key={index}>
               <li
-                key={key}
                 className="flex flex-col items-center gap-2 cursor-pointer 
                   bg-gray-100 rounded-xl px-4 py-3 
                   transition-all duration-300 ease-in-out 

@@ -11,7 +11,10 @@ export default function Home() {
   );
   return (
     <div className="p-6">
-      <Header heading={showCreatePost ? "Create a post" : "Welcome User!"} />
+      <Header
+        heading={showCreatePost ? "Create a post" : "Welcome User!"}
+        buttonText={showCreatePost ? "X" : "Create a post"}
+      />
       <main className="mt-6">
         {showCreatePost ? (
           <CreatePost />
