@@ -5,6 +5,7 @@ interface ButtonProps {
   icon: React.ElementType;
   className?: string;
   iconClassName?: string;
+  onClick: () => void;
 }
 
 export const Button = ({
@@ -12,9 +13,11 @@ export const Button = ({
   icon: Icon,
   className = "",
   iconClassName = "",
+  onClick,
 }: ButtonProps) => {
   return (
     <button
+      onClick={onClick}
       className={`flex items-center gap-2 px-6 py-2 bg-[#3498db] text-white rounded-lg shadow-md hover:bg-[#2980b9] hover:shadow-lg transition duration-200 ${className}`}
     >
       <Icon className={`w-5 h-5 ${iconClassName}`} />
