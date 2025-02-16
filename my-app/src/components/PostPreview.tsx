@@ -7,32 +7,34 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
   faInstagram,
-  faTiktok,
+  faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
-
-interface PostPreviewProps {
-  platform: "LinkedIn" | "Instagram" | "TikTok";
-}
 
 const platformIcons = {
   LinkedIn: { icon: faLinkedin, color: "text-blue-700" },
   Instagram: { icon: faInstagram, color: "text-pink-500" },
-  TikTok: { icon: faTiktok, color: "text-black" },
+  Facebook: { icon: faFacebook, color: "text-blue-600" },
 };
 
-const PostPreview = ({ platform }: PostPreviewProps) => {
+const PostPreview = () => {
   const postContent = useSelector((state: RootState) => state.post.content);
+  const platform = useSelector((state: RootState) => state.post.platform);
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex gap-2 items-center">
-        <FontAwesomeIcon
-          icon={platformIcons[platform].icon}
-          size="2x"
-          className={platformIcons[platform].color}
-        />
-        <span className="text-xl font-bold">{platform}</span>
-      </div>
+      {platform && (
+        <div className="flex gap-2 items-center">
+          <FontAwesomeIcon
+            icon={platformIcons[platform as keyof typeof platformIcons].icon}
+            size="2x"
+            className={
+              platformIcons[platform as keyof typeof platformIcons].color
+            }
+          />
+          <span className="text-xl font-bold">{platform}</span>
+        </div>
+      )}
+
       <div className="border p-3 rounded flex flex-col gap-6 shadow-md bg-white">
         <div className="flex justify-between">
           <div className="flex gap-2 items-center">

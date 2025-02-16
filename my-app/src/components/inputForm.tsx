@@ -10,7 +10,7 @@ import {
 import { Smile } from "lucide-react";
 import EmojiPicker from "emoji-picker-react";
 import { Textarea } from "@/components/ui/textarea";
-import { setPostContent } from "@/state/slices/postSlice";
+import { setPostContent, setPlatform } from "@/state/slices/postSlice";
 
 interface InputFormProps {
   label: string;
@@ -19,7 +19,7 @@ interface InputFormProps {
   textAreaPlaceholder: string;
 }
 
-const InputFormProps = ({
+const InputForm = ({
   label,
   selectItem,
   selectPlaceholder,
@@ -42,13 +42,25 @@ const InputFormProps = ({
     setShowPicker(false);
   };
 
+  const handlePlatformChange = (selectedPlatform: string) => {
+    if (
+      selectedPlatform === "LinkedIn" ||
+      selectedPlatform === "Instagram" ||
+      selectedPlatform === "Facebook"
+    ) {
+      dispatch(setPlatform(selectedPlatform));
+    } else {
+      dispatch(setPlatform(null));
+    }
+  };
+
   return (
     <div className="flex flex-col gap-6 w-full">
       <div className="shadow-md">
         <label htmlFor="select" className="text-sm text-gray-700 font-bold">
           {label}
         </label>
-        <Select>
+        <Select onValueChange={handlePlatformChange}>
           <SelectTrigger id="select" className="w-full">
             <SelectValue placeholder={selectPlaceholder} />
           </SelectTrigger>
@@ -91,4 +103,4 @@ const InputFormProps = ({
   );
 };
 
-export default InputFormProps;
+export default InputForm;

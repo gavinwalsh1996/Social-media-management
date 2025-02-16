@@ -2,10 +2,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface PostState {
   content: string;
+  platform: "LinkedIn" | "Instagram" | "Facebook" | null;
 }
 
 const initialState: PostState = {
   content: "",
+  platform: null,
 };
 
 const postSlice = createSlice({
@@ -15,11 +17,11 @@ const postSlice = createSlice({
     setPostContent: (state, action: PayloadAction<string>) => {
       state.content = action.payload;
     },
-    clearPostContent: (state) => {
-      state.content = "";
+    setPlatform: (state, action: PayloadAction<PostState["platform"]>) => {
+      state.platform = action.payload;
     },
   },
 });
 
-export const { setPostContent, clearPostContent } = postSlice.actions;
+export const { setPostContent, setPlatform } = postSlice.actions;
 export default postSlice.reducer;

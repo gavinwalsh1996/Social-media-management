@@ -10,12 +10,12 @@ const CreatePost = () => {
           <InputForm
             label="Publish to"
             selectPlaceholder="Select a social account"
-            selectItem={["LinkedIn", "Tiktok", "Instagram"]}
+            selectItem={["LinkedIn", "Facebook", "Instagram"]}
             textAreaPlaceholder="Type your message here."
           />
         </div>
         <div className="w-1/3 p-6 pt-[53px]">
-          <PostPreview platform="LinkedIn" />
+          <PostPreview />
         </div>
       </div>
     </div>
