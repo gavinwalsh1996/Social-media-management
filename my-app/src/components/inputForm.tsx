@@ -6,6 +6,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Smile } from "lucide-react";
+import EmojiPicker from "emoji-picker-react";
 import { Textarea } from "@/components/ui/textarea";
 
 interface DropdownSelect {
@@ -22,6 +24,12 @@ export default function InputForm({
   textAreaPlaceholder,
 }: DropdownSelect) {
   const [text, setText] = useState("");
+  const [showPicker, setShowPicker] = useState(false);
+
+  const handleEmojiSelect = (emojiData: any) => {
+    setText((prev) => prev + emojiData.emoji);
+    setShowPicker(false);
+  };
 
   return (
     <div className="flex flex-col gap-6 w-full">
@@ -54,6 +62,19 @@ export default function InputForm({
         <div className="absolute bottom-2 left-4 text-sm text-gray-500">
           {text.length} / 3,000
         </div>
+
+        <button
+          className="absolute bottom-1 right-4 p-2 text-xl"
+          onClick={() => setShowPicker(!showPicker)}
+        >
+          <Smile size={18} />
+        </button>
+
+        {showPicker && (
+          <div className="absolute bottom-100 right-4 z-50">
+            <EmojiPicker onEmojiClick={handleEmojiSelect} />
+          </div>
+        )}
       </div>
     </div>
   );

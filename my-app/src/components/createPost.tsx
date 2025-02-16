@@ -1,5 +1,5 @@
 import React from "react";
-import DropdownSelect from "./InputForm";
+import DropdownSelect from "./inputForm";
 import PostPreview from "./PostPreview";
 
 export default function CreatePost() {
