@@ -1,5 +1,5 @@
 import React from "react";
-import DropdownSelect from "./DropdownSelect";
+import DropdownSelect from "./inputForm";
 
 export default function CreatePost() {
   return (
@@ -8,8 +8,9 @@ export default function CreatePost() {
         <div className="w-1/2 border-r p-6">
           <DropdownSelect
             label="Publish to"
-            placeholder="Select a social account"
+            selectPlaceholder="Select a social account"
             selectItem={["LinkedIn", "Tiktok", "Instagram"]}
+            textAreaPlaceholder="Type your message here."
           />
         </div>
         <div className="w-1/2 p-6">right</div>
