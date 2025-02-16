@@ -23,7 +23,7 @@ export default function InputForm({
 }: DropdownSelect) {
   return (
     <div className="flex flex-col gap-6 w-full">
-      <div>
+      <div className="shadow-md">
         <label htmlFor="select" className="text-sm  text-gray-700 font-bold">
           {label}
         </label>
@@ -40,7 +40,7 @@ export default function InputForm({
           </SelectContent>
         </Select>
       </div>
-      <Textarea placeholder={textAreaPlaceholder} className="h-32" />
+      <Textarea placeholder={textAreaPlaceholder} className="h-32 shadow-md" />
     </div>
   );
 }
