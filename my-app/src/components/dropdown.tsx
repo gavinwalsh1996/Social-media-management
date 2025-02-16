@@ -14,7 +14,7 @@ interface DropdownProps {
   items: string[];
 }
 
-export default function Dropdown({ triggerText, label, items }: DropdownProps) {
+const Dropdown = ({ triggerText, label, items }: DropdownProps) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>{triggerText}</DropdownMenuTrigger>
@@ -31,4 +31,6 @@ export default function Dropdown({ triggerText, label, items }: DropdownProps) {
       </DropdownMenuContent>
     </DropdownMenu>
   );
-}
+};
+
+export default Dropdown;

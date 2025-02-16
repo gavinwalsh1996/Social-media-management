@@ -1,27 +1,44 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "@/state/store";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Ellipsis, ThumbsUp, MessageCircle, Share } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faTiktok } from "@fortawesome/free-brands-svg-icons";
+import {
+  faLinkedin,
+  faInstagram,
+  faTiktok,
+} from "@fortawesome/free-brands-svg-icons";
 
-export default function PostPreview() {
+interface PostPreviewProps {
+  platform: "LinkedIn" | "Instagram" | "TikTok";
+}
+
+const platformIcons = {
+  LinkedIn: { icon: faLinkedin, color: "text-blue-700" },
+  Instagram: { icon: faInstagram, color: "text-pink-500" },
+  TikTok: { icon: faTiktok, color: "text-black" },
+};
+
+const PostPreview = ({ platform }: PostPreviewProps) => {
+  const postContent = useSelector((state: RootState) => state.post.content);
+
   return (
     <div className="flex flex-col gap-6">
       <div className="flex gap-2 items-center">
         <FontAwesomeIcon
-          icon={faLinkedin}
+          icon={platformIcons[platform].icon}
           size="2x"
-          className="text-blue-700"
+          className={platformIcons[platform].color}
         />
-        <span className="text-xl font-bold">LinkedIn</span>
+        <span className="text-xl font-bold">{platform}</span>
       </div>
-      <div className="border p-3 rounded flex flex-col gap-6 shadow-md">
+      <div className="border p-3 rounded flex flex-col gap-6 shadow-md bg-white">
         <div className="flex justify-between">
           <div className="flex gap-2 items-center">
             <Avatar>
               <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>CN</AvatarFallback>
+              <AvatarFallback>GW</AvatarFallback>
             </Avatar>
 
             <div className="flex flex-col">
@@ -31,19 +48,23 @@ export default function PostPreview() {
           </div>
           <Ellipsis />
         </div>
-        <div>This is a post</div>
+
+        <div className="text-gray-800">
+          {postContent || "Your post preview will appear here..."}
+        </div>
+
         <div className="flex gap-4">
-          <div className="flex items-center gap-1 text-gray-600">
+          <div className="flex items-center gap-1 text-gray-600 hover:text-gray-900 cursor-pointer">
             <ThumbsUp size={15} />
             <span className="text-sm">Like</span>
           </div>
 
-          <div className="flex items-center gap-1 text-gray-600">
+          <div className="flex items-center gap-1 text-gray-600 hover:text-gray-900 cursor-pointer">
             <MessageCircle size={15} />
             <span className="text-sm">Comment</span>
           </div>
 
-          <div className="flex items-center gap-1 text-gray-600">
+          <div className="flex items-center gap-1 text-gray-600 hover:text-gray-900 cursor-pointer">
             <Share size={15} />
             <span className="text-sm">Share</span>
           </div>
@@ -51,4 +72,6 @@ export default function PostPreview() {
       </div>
     </div>
   );
-}
+};
+
+export default PostPreview;

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
+import { useDispatch } from "react-redux";
 import {
   Select,
   SelectContent,
@@ -9,25 +10,35 @@ import {
 import { Smile } from "lucide-react";
 import EmojiPicker from "emoji-picker-react";
 import { Textarea } from "@/components/ui/textarea";
+import { setPostContent } from "@/state/slices/postSlice";
 
-interface DropdownSelect {
+interface InputFormProps {
   label: string;
   selectItem: string[];
   selectPlaceholder: string;
   textAreaPlaceholder: string;
 }
 
-export default function InputForm({
+const InputFormProps = ({
   label,
   selectItem,
   selectPlaceholder,
   textAreaPlaceholder,
-}: DropdownSelect) {
-  const [text, setText] = useState("");
-  const [showPicker, setShowPicker] = useState(false);
+}: InputFormProps) => {
+  const dispatch = useDispatch();
+  const [text, setText] = useState<string>("");
+  const [showPicker, setShowPicker] = useState<boolean>(false);
 
-  const handleEmojiSelect = (emojiData: any) => {
-    setText((prev) => prev + emojiData.emoji);
+  const handleTextChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    const newText = e.target.value;
+    setText(newText);
+    dispatch(setPostContent(newText));
+  };
+
+  const handleEmojiSelect = (emojiData: { emoji: string }) => {
+    const updatedText = text + emojiData.emoji;
+    setText(updatedText);
+    dispatch(setPostContent(updatedText));
     setShowPicker(false);
   };
 
@@ -56,7 +67,7 @@ export default function InputForm({
           placeholder={textAreaPlaceholder}
           maxLength={3000}
           className="h-32 shadow-md"
-          onChange={(e) => setText(e.target.value)}
+          onChange={handleTextChange}
           value={text}
         />
         <div className="absolute bottom-2 left-4 text-sm text-gray-500">
@@ -78,4 +89,6 @@ export default function InputForm({
       </div>
     </div>
   );
-}
+};
+
+export default InputFormProps;

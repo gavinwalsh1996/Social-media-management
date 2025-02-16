@@ -1,24 +1,25 @@
 import React from "react";
-import DropdownSelect from "./inputForm";
+import InputForm from "./inputForm";
 import PostPreview from "./PostPreview";
 
-export default function CreatePost() {
+const CreatePost = () => {
   return (
     <div className="bg-gray-100 py-6 border-t px-2 h-screen">
       <div className="bg-white rounded flex h-full">
-        <div className="w-1/2 border-r p-6">
-          <DropdownSelect
+        <div className="w-2/3 border-r p-6">
+          <InputForm
             label="Publish to"
             selectPlaceholder="Select a social account"
             selectItem={["LinkedIn", "Tiktok", "Instagram"]}
             textAreaPlaceholder="Type your message here."
           />
         </div>
-        <div className="w-1/2 p-6 pt-[53px]">
-          <PostPreview />
+        <div className="w-1/3 p-6 pt-[53px]">
+          <PostPreview platform="LinkedIn" />
         </div>
       </div>
-      <div>Post</div>
     </div>
   );
-}
+};
+
+export default CreatePost;
