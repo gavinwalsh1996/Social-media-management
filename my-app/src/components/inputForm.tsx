@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Select,
   SelectContent,
@@ -21,10 +21,12 @@ export default function InputForm({
   selectPlaceholder,
   textAreaPlaceholder,
 }: DropdownSelect) {
+  const [text, setText] = useState("");
+
   return (
     <div className="flex flex-col gap-6 w-full">
       <div className="shadow-md">
-        <label htmlFor="select" className="text-sm  text-gray-700 font-bold">
+        <label htmlFor="select" className="text-sm text-gray-700 font-bold">
           {label}
         </label>
         <Select>
@@ -40,7 +42,19 @@ export default function InputForm({
           </SelectContent>
         </Select>
       </div>
-      <Textarea placeholder={textAreaPlaceholder} className="h-32 shadow-md" />
+
+      <div className="relative">
+        <Textarea
+          placeholder={textAreaPlaceholder}
+          maxLength={3000}
+          className="h-32 shadow-md"
+          onChange={(e) => setText(e.target.value)}
+          value={text}
+        />
+        <div className="absolute bottom-2 left-4 text-sm text-gray-500">
+          {text.length} / 3,000
+        </div>
+      </div>
     </div>
   );
 }
