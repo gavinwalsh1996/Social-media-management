@@ -51,7 +51,7 @@ const PostPreview = () => {
           <Ellipsis />
         </div>
 
-        <div className="text-gray-800">
+        <div className="text-gray-800 h-64 overflow-y-auto">
           {postContent || "Your post preview will appear here..."}
         </div>
 

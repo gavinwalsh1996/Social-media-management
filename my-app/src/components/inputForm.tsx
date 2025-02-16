@@ -56,12 +56,12 @@ const InputForm = ({
 
   return (
     <div className="flex flex-col gap-6 w-full">
-      <div className="shadow-md">
+      <div>
         <label htmlFor="select" className="text-sm text-gray-700 font-bold">
           {label}
         </label>
         <Select onValueChange={handlePlatformChange}>
-          <SelectTrigger id="select" className="w-full">
+          <SelectTrigger id="select" className="w-full shadow-md">
             <SelectValue placeholder={selectPlaceholder} />
           </SelectTrigger>
           <SelectContent>

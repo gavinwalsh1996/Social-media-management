@@ -21,7 +21,7 @@ const Calendar = () => {
   };
 
   return (
-    <div className="calendar-container">
+    <div className="max-h-screen overflow-auto">
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"

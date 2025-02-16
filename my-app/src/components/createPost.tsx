@@ -6,7 +6,7 @@ const CreatePost = () => {
   return (
     <div className="bg-gray-100 py-6 border-t px-2 h-screen">
       <div className="bg-white rounded flex h-full">
-        <div className="w-2/3 border-r p-6">
+        <div className="w-1/2 border-r p-6">
           <InputForm
             label="Publish to"
             selectPlaceholder="Select a social account"
@@ -14,7 +14,7 @@ const CreatePost = () => {
             textAreaPlaceholder="Type your message here."
           />
         </div>
-        <div className="w-1/3 p-6 pt-[53px]">
+        <div className="w-1/2 p-6 pt-[53px]">
           <PostPreview />
         </div>
       </div>
