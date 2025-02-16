@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Header } from "@/components/header";
-import Calendar from "@/components/calendar";
+import { Header } from "@/components/Header";
+import Calendar from "@/components/Calendar";
 
 export default function Plan() {
   return (

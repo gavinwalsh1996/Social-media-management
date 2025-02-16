@@ -1,5 +1,6 @@
 import React from "react";
-import DropdownSelect from "./inputForm";
+import DropdownSelect from "./InputForm";
+import PostPreview from "./PostPreview";
 
 export default function CreatePost() {
   return (
@@ -13,7 +14,9 @@ export default function CreatePost() {
             textAreaPlaceholder="Type your message here."
           />
         </div>
-        <div className="w-1/2 p-6">right</div>
+        <div className="w-1/2 p-6">
+          <PostPreview />
+        </div>
       </div>
     </div>
   );

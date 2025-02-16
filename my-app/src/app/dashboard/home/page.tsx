@@ -1,7 +1,7 @@
 "use client";
 
-import { Header } from "@/components/header";
-import CreatePost from "@/components/createPost";
+import { Header } from "@/components/Header";
+import CreatePost from "@/components/CreatePost";
 import { useSelector } from "react-redux";
 import { RootState } from "@/state/store";
 

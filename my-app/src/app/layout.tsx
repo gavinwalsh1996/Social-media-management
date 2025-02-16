@@ -2,7 +2,7 @@
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Sidebar } from "@/components/sidebar";
+import { Sidebar } from "@/components/Sidebar";
 import { House, CalendarDays, CirclePlus, User, Store } from "lucide-react";
 import { Provider } from "react-redux";
 import { store } from "@/state/store";

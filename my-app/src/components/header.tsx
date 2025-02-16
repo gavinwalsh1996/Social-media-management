@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { Button } from "./button";
+import { Button } from "./Button";
 import { CirclePlus, X } from "lucide-react";
-import Tabs_ from "./tabs";
+import Tabs_ from "./Tabs";
 import { useDispatch } from "react-redux";
 import { showCreatePost, hideCreatePost } from "@/state/slices/uiSlice";
 
