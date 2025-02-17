@@ -61,20 +61,20 @@ export const Sidebar = ({ menuItems }: SideBarProps) => {
           )
         )}
       </ul>
-      <Link href="/dashboard/profile">
-        <div className="mt-auto cursor-pointer p-3 rounded-full bg-gray-100 transition-all duration-300 ease-in-out hover:bg-gray-200 hover:shadow-lg hover:-translate-y-1">
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger>
-                <User className="w-8 h-8 text-gray-600 transition-colors duration-300 hover:text-gray-900" />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>profile</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        </div>
-      </Link>
+      {/* <Link href="/dashboard/profile"> */}
+      <div className="mt-auto cursor-pointer p-3 rounded-full bg-gray-100 transition-all duration-300 ease-in-out hover:bg-gray-200 hover:shadow-lg hover:-translate-y-1">
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              <User className="w-8 h-8 text-gray-600 transition-colors duration-300 hover:text-gray-900" />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>profile</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </div>
+      {/* </Link> */}
     </div>
   );
 };

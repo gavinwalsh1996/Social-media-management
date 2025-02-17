@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div className="p-6">
       <Header
-        heading={showCreatePost ? "Create a post" : "Welcome Gavin!"}
+        heading={showCreatePost ? "Create a post" : "Welcome, Gavin!"}
         buttonText={showCreatePost ? "X" : "Create a post"}
       />
       <main className="mt-6">

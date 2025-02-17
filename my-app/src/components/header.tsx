@@ -23,7 +23,7 @@ export const Header = ({
   const dispatch = useDispatch();
   return (
     <header className={`flex items-center justify-between h-10 ${className}`}>
-      <h1 className="text-3xl">{heading}</h1>
+      <h1 className="text-3xl font-extrabold">{heading}</h1>
       <Button
         text={buttonText}
         icon={buttonText === "X" ? X : CirclePlus}
