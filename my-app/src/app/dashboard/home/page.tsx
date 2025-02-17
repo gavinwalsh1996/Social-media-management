@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import StatCard from "@/components/StatCard";
 import DataTable from "@/components/DataTable";
 import { DataChart } from "@/components/DataChart";
+import ProgressBar from "@/components/ProgressBar";
 import CreatePost from "@/components/CreatePost";
 import { useSelector } from "react-redux";
 import { RootState } from "@/state/store";
@@ -62,7 +63,12 @@ export default function Home() {
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-                <div className="col-span-1 p-4">
+                <div className="col-span-1 p-4 flex flex-col justify-between">
+                  <ProgressBar
+                    label="Followers Goal"
+                    current={1500}
+                    total={2000}
+                  />
                   <DataTable />
                 </div>
                 <div className="col-span-1 p-4">
