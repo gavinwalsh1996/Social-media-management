@@ -3,6 +3,7 @@
 import { Header } from "@/components/Header";
 import StatCard from "@/components/StatCard";
 import DataTable from "@/components/DataTable";
+import { DataChart } from "@/components/DataChart";
 import CreatePost from "@/components/CreatePost";
 import { useSelector } from "react-redux";
 import { RootState } from "@/state/store";
@@ -65,7 +66,9 @@ export default function Home() {
                   <DataTable />
                 </div>
                 <div className="col-span-1 p-4">
-                  <div className="bg-gray-200 p-6 rounded-lg">Chart</div>
+                  <div className="bg-gray-200 p-6 rounded-lg">
+                    <DataChart />
+                  </div>
                 </div>
               </div>
             </div>
