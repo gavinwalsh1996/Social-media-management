@@ -14,12 +14,12 @@ export default function StatCard({
   percentage,
 }: StatCardProps) {
   return (
-    <div className="flex items-center justify-between bg-white shadow-md p-6 rounded-lg">
+    <div className="flex flex-col sm:flex-row items-center justify-between bg-white shadow-md p-6 rounded-lg gap-4 sm:gap-6">
       <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full">
         <Icon className="w-6 h-6 text-blue-600" />
       </div>
 
-      <div className="flex flex-col text-right">
+      <div className="flex flex-col sm:text-right text-center">
         <span className="text-sm text-gray-500">{title}</span>
         <span className="text-2xl font-semibold text-gray-900">{amount}</span>
 

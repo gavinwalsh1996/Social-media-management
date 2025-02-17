@@ -1,5 +1,5 @@
 import React from "react";
-import InputForm from "./inputForm";
+import InputForm from "./InputForm";
 import PostPreview from "./PostPreview";
 
 const CreatePost = () => {
