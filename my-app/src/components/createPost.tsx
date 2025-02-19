@@ -1,6 +1,7 @@
 import React from "react";
 import InputForm from "./InputForm";
 import PostPreview from "./PostPreview";
+import PostActionBar from "./PostActionBar";
 
 const CreatePost = () => {
   return (
@@ -14,8 +15,9 @@ const CreatePost = () => {
             textAreaPlaceholder="Type your message here."
           />
         </div>
-        <div className="w-1/2 p-6 pt-[53px]">
+        <div className="w-1/2 p-6 pt-[53px] gap-6 flex flex-col">
           <PostPreview />
+          <PostActionBar />
         </div>
       </div>
     </div>
