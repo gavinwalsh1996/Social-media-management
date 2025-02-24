@@ -26,6 +26,18 @@ const Calendar = () => {
   };
 
   const handleDateClick = (dateInfo: any) => {
+    const clickedDate = new Date(dateInfo.dateStr);
+    clickedDate.setHours(0, 0, 0, 0); // Sets time to midnight
+
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0); // Sets current date to midnight
+
+    // Checks if the clicked date is in the past
+    if (clickedDate < currentDate) {
+      alert("You cannot schedule posts on past dates.");
+      return;
+    }
+
     alert(`Date clicked: ${dateInfo.dateStr}`);
   };
 

@@ -16,6 +16,17 @@ export default function PostActionBar() {
       return;
     }
 
+    // Converts the scheduledTime string to a Date object
+    const scheduledDate = new Date(scheduledTime);
+    const currentDate = new Date();
+
+    // Compare if the selected time is in the past
+    if (scheduledDate < currentDate) {
+      alert("You cannot schedule posts for past dates.");
+      return;
+    }
+
+    // Dispatch the action to schedule the post
     dispatch(schedulePost({ content: postContent, platform, scheduledTime }));
     alert("Post scheduled!");
   };
