@@ -1,5 +1,5 @@
 import React from "react";
-import InputForm from "./InputForm";
+import InputForm from "./inputForm";
 import PostPreview from "./PostPreview";
 import PostActionBar from "./PostActionBar";
 

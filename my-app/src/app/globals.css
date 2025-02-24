@@ -118,6 +118,27 @@ body {
   cursor: pointer;
 }
 
+.fc-event-title {
+  font-size: 0.875rem;
+  padding: 4px 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.fc-event {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  font-family: "Arial", sans-serif;
+}
+
+.fc-toolbar-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
 @layer base {
   * {
     @apply border-border;
